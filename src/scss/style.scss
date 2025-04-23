@@ -1,0 +1,160 @@
+@import "normalize.css";
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+:root {
+  --color-shadow: #b9ff66;
+  --shadow: 0 5px 0 0 var(--color-shadow);
+  --transition-duration: 0.2s;
+  --border-radius: 14px;
+  --font-family-base: ;
+  --container-width: 1600px;
+  --container-padding-x: 20px;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  // background-image: url(/public/images/1.jpg);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  background-color: rgba(0, 0, 0, 0.747);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  background-color: cadetblue;
+}
+
+main {
+  height: calc(100vh - 100px);
+}
+
+.content {
+  display: flex;
+  gap: 10px;
+  // justify-content: space-between;
+  // overflow-x: hidden;
+  background-color: yellowgreen;
+}
+
+.current {
+  background-color: aquamarine;
+  // flex: 1;
+  width: 50%;
+}
+
+.detailed {
+  box-sizing: border-box;
+  padding-inline: 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+
+  width: 50%;
+  justify-content: center;
+}
+
+.one-day {
+  box-sizing: border-box;
+  padding-inline: 100px;
+  display: flex;
+  background-color: rgb(145, 222, 135);
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden; /* Скрываем ушедшие слайды */
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex; /* Слайды выстраиваются в ряд */
+}
+
+.swiper-slide {
+  flex-shrink: 0; /* Слайды не сжимаются */
+  width: 100%; /* Ширина слайда равна ширине контейнера */
+  background-color: aqua;
+  height: 100px;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  left: 50px;
+}
+
+.swiper-button-next {
+  position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  right: 50px;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr; /* 4 колонки */
+  grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
+  gap: 10px; /* Расстояние между ячейками */
+  // border-bottom: 1px solid #000; /* Подчеркивание заголовка */
+}
+
+.weather-grid__header {
+  grid-column: 1 / -1; /* Заголовок на всю строку */
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid #000; /* Подчеркивание заголовка */
+}
+
+.day,
+.icon,
+.temp,
+.description {
+  padding: 10px;
+  text-align: center;
+}
+
+.day {
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 1.5em;
+}
+
+.temp {
+  font-weight: bold;
+}
+
+.description {
+  font-style: italic;
+}

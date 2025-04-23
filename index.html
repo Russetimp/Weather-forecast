@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+  </head>
+
+  <body>
+    <header class="header container">
+      <form class="header__form" action="">
+        <input class="header__input" type="text" placeholder="Город" />
+      </form>
+    </header>
+
+    <main class="content container">
+      <div class="current">
+        <div class="current__city-data">
+          <p class="current__city">Москва</p>
+          <p class="current__data">Пятница, 14 марта 2025г</p>
+        </div>
+        <div class="current__weather">
+          <p class="current__temperatura">6&deg;</p>
+          <div class="perceived-temperature">
+            <img src="" alt="" class="perceived-temperature__icon" />
+            <p class="perceived-temperature__description">
+              небольшая облачность
+            </p>
+          </div>
+          <p class="current__felt-temperature">Ощущается как 3&deg;</p>
+          <div class="weather-conditions">
+            <div class="weather-condition">
+              <div class="weather-condition__icon-background">
+                <img src="" alt="" class="weather-condition__icon" />
+                <p class="weather-condition__value">3 м/c</p>
+              </div>
+              <div class="weather-condition__icon-background">
+                <img src="" alt="" class="weather-condition__icon" />
+                <p class="weather-condition__value">82%</p>
+              </div>
+              <div class="weather-condition__icon-background">
+                <img src="" alt="" class="weather-condition__icon" />
+                <p class="weather-condition__value">10км</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed">
+        <div class="one-day">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="fiveday">
+          <div class="weather-grid">
+            <div class="weather-grid__header">Прогноз погоды на 5 дней</div>
+            <div class="day">Понедельник</div>
+            <div class="icon">☀️</div>
+            <div class="temp">+25°C</div>
+            <div class="description">Солнечно</div>
+            <div class="day">Вторник</div>
+            <div class="icon">🌧️</div>
+            <div class="temp">+18°C</div>
+            <div class="description">Небольшой дождь</div>
+            <div class="day">Среда</div>
+            <div class="icon">⛅</div>
+            <div class="temp">+20°C</div>
+            <div class="description">Переменная облачность</div>
+            <div class="day">Четверг</div>
+            <div class="icon">🌩️</div>
+            <div class="temp">+22°C</div>
+            <div class="description">Гроза</div>
+            <div class="day">Пятница</div>
+            <div class="icon">🌤️</div>
+            <div class="temp">+24°C</div>
+            <div class="description">Малооблачно</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
