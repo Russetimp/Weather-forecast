@@ -7,89 +7,288 @@
   </head>
 
   <body>
-    <header class="header container">
-      <form class="header__form" action="">
-        <input class="header__input" type="text" placeholder="Город" />
-      </form>
-    </header>
+    <div class="page">
+      <header class="header container">
+        <form class="header__form" action="">
+          <input
+            class="header__input"
+            type="text"
+            placeholder="Введите название города"
+          />
+        </form>
+      </header>
 
-    <main class="content container">
-      <div class="current">
-        <div class="current__city-data">
-          <p class="current__city">Москва</p>
-          <p class="current__data">Пятница, 14 марта 2025г</p>
-        </div>
-        <div class="current__weather">
-          <p class="current__temperatura">6&deg;</p>
-          <div class="perceived-temperature">
-            <img src="" alt="" class="perceived-temperature__icon" />
-            <p class="perceived-temperature__description">
-              небольшая облачность
-            </p>
+      <main class="container">
+        <div class="current">
+          <div class="current__city-data">
+            <p class="current__city">Москва</p>
+            <p class="current__data">Пятница, 14 марта 2025г</p>
           </div>
-          <p class="current__felt-temperature">Ощущается как 3&deg;</p>
-          <div class="weather-conditions">
-            <div class="weather-condition">
-              <div class="weather-condition__icon-background">
-                <img src="" alt="" class="weather-condition__icon" />
+
+          <div class="current__weather">
+            <p class="current__temperatura">6&deg;</p>
+            <div class="current-perceived">
+              <img
+                src="/images/Иконки погоды/10n@2x.png"
+                alt=""
+                style="vertical-align: middle"
+                class="current-perceived__icon"
+              />
+              <span class="current-perceived__description">
+                Небольшая облачность
+              </span>
+              <p class="current-perceived__temperature">Ощущается как 3&deg;</p>
+            </div>
+
+            <div class="weather-conditions">
+              <div class="weather-condition">
+                <img
+                  src="/images/Иконки погоды/10n@2x.png"
+                  width="40"
+                  height="40"
+                  alt=""
+                  class="weather-condition__icon"
+                />
                 <p class="weather-condition__value">3 м/c</p>
               </div>
-              <div class="weather-condition__icon-background">
-                <img src="" alt="" class="weather-condition__icon" />
+              <div class="weather-condition">
+                <img
+                  src="/images/Иконки погоды/10n@2x.png"
+                  width="40"
+                  height="40"
+                  alt=""
+                  class="weather-condition__icon"
+                />
                 <p class="weather-condition__value">82%</p>
               </div>
-              <div class="weather-condition__icon-background">
-                <img src="" alt="" class="weather-condition__icon" />
+              <div class="weather-condition">
+                <img
+                  src="/images/Иконки погоды/10n@2x.png"
+                  width="40"
+                  height="40"
+                  alt=""
+                  class="weather-condition__icon"
+                />
                 <p class="weather-condition__value">10км</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="detailed">
-        <div class="one-day">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              <div class="swiper-slide">Slide 4</div>
-              <div class="swiper-slide">Slide 5</div>
-              <div class="swiper-slide">Slide 6</div>
+        <div class="detailed">
+          <div class="one-day">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="00:00">00:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">1&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="03:00">03:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">2&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="06:00">06:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">3&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="09:00">09:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">4&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="15:00">15:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">5&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="18:00">18:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">6&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="21:00">21:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">7&deg;</p>
+                </div>
+                <div class="swiper-slide">
+                  <time class="swiper-slide__time" datetime="24:00">24:00</time>
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    width="40"
+                    height="40"
+                    alt=""
+                    class="swiper-slide__image"
+                  />
+                  <p class="swiper-slide__temperature">8&deg;</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev custom-prev">
+              <svg
+                class="arrow-left"
+                viewBox="0 0 15 27"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="arrow-left_circle"
+                  cx="7.5"
+                  cy="13.5"
+                  r="5.625"
+                  fill="#E0E0E0"
+                />
+                <g
+                  transform="translate(7.5 13.5) scale(0.6667) translate(-2.5 -4.5)"
+                >
+                  <path
+                    d="M1.46,6.75 L1.25,6.55 L3.33,4.5 L1.25,2.45 L1.46,2.25 L3.75,4.5 L1.46,6.75 Z"
+                    fill="none"
+                    stroke="#3F51B5"
+                    stroke-width="0.2"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="swiper-button-next custom-next">
+              <svg
+                class="arrow-right"
+                viewBox="0 0 15 27"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="arrow-right__circle"
+                  cx="7.5"
+                  cy="13.5"
+                  r="5.625"
+                  fill="#E0E0E0"
+                />
+                <g
+                  transform="translate(7.5 13.5) scale(0.6667) translate(-2.5 -4.5)"
+                >
+                  <path
+                    d="M1.46,6.75 L1.25,6.55 L3.33,4.5 L1.25,2.45 L1.46,2.25 L3.75,4.5 L1.46,6.75 Z"
+                    fill="none"
+                    stroke="#3F51B5"
+                    stroke-width="0.2"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
             </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
 
-        <div class="fiveday">
-          <div class="weather-grid">
-            <div class="weather-grid__header">Прогноз погоды на 5 дней</div>
-            <div class="day">Понедельник</div>
-            <div class="icon">☀️</div>
-            <div class="temp">+25°C</div>
-            <div class="description">Солнечно</div>
-            <div class="day">Вторник</div>
-            <div class="icon">🌧️</div>
-            <div class="temp">+18°C</div>
-            <div class="description">Небольшой дождь</div>
-            <div class="day">Среда</div>
-            <div class="icon">⛅</div>
-            <div class="temp">+20°C</div>
-            <div class="description">Переменная облачность</div>
-            <div class="day">Четверг</div>
-            <div class="icon">🌩️</div>
-            <div class="temp">+22°C</div>
-            <div class="description">Гроза</div>
-            <div class="day">Пятница</div>
-            <div class="icon">🌤️</div>
-            <div class="temp">+24°C</div>
-            <div class="description">Малооблачно</div>
+          <div class="fiveday">
+            <div class="weather-grid">
+              <div class="weather-grid__wrapper">
+                <div class="weather-grid__header">Прогноз на пять дней</div>
+                <div class="weather-grid__day">Пн</div>
+                <div class="weather-grid__icon-wrapper">
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    alt=""
+                    class="weather-grid__icon"
+                  />
+                </div>
+                <div class="weather-grid__temp">+5°C</div>
+                <div class="weather-grid__description">Солнечно</div>
+                <div class="weather-grid__day">Вт</div>
+                <div class="weather-grid__icon-wrapper">
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    alt=""
+                    class="weather-grid__icon"
+                  />
+                </div>
+                <div class="weather-grid__temp">+18°C</div>
+                <div class="weather-grid__description">Небольшой дождь</div>
+                <div class="weather-grid__day">Ср</div>
+                <div class="weather-grid__icon-wrapper">
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    alt=""
+                    class="weather-grid__icon"
+                  />
+                </div>
+                <div class="weather-grid__temp">+20°C</div>
+                <div class="weather-grid__description">
+                  Переменная облачность
+                </div>
+                <div class="weather-grid__day">Чт</div>
+                <div class="weather-grid__icon-wrapper">
+                  <img
+                    src="/images/Иконки погоды/10n@2x.png"
+                    alt=""
+                    class="weather-grid__icon"
+                  />
+                </div>
+                <div class="weather-grid__temp">+22°C</div>
+                <div class="weather-grid__description">Гроза</div>
+                <div class="weather-grid__day">Пт</div>
+                <!-- <div class="weather-grid__icon-wrapper"> -->
+                <img
+                  src="/images/Иконки погоды/10n@2x.png"
+                  alt=""
+                  class="weather-grid__icon"
+                />
+                <!-- </div> -->
+                <div class="weather-grid__temp">+24°C</div>
+                <div class="weather-grid__description">Малооблачно</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-    <script type="module" src="/src/js/main.js"></script>
+      </main>
+
+      <footer>
+        <span>Разработал: Шведов Илья Дмитриевич</span>
+      </footer>
+      <script type="module" src="/src/js/main.js"></script>
+    </div>
   </body>
 </html>

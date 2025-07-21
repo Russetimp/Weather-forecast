@@ -32,9 +32,6 @@ import "../scss/style.scss";
 //   getWeatherByLocation(city);
 // };
 
-
-
-
 ////Вариант через async/await
 // async function getWeatherByLocation(locationName) {
 //   const apiUrl = `${BASE_API_URL}?q=${locationName}&appid=${API_KEY}&lang=ru&units=metric`;
@@ -52,16 +49,35 @@ import "../scss/style.scss";
 // getWeatherByLocation("Москва");
 // // getWeatherByLocation("Moscow");
 
-const swiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  slidesPerView: 4, // Количество видимых слайдов
+const swiper = new Swiper(".swiper-container", {
+  direction: "horizontal",
+  resistance: true, // Включаем сопротивление краям (по умолчанию)
+  resistanceRatio: 0, // Убираем "растяжение" при сопротивлении
+  slidesPerView: 6, // Количество видимых слайдов
   spaceBetween: 30, // Расстояние между слайдами
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    prevEl: ".custom-prev",
+    nextEl: ".custom-next",
   },
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
 });
+
+const form = document.querySelector('.header__form');
+const input = form.querySelector('.header__input');
+
+// Скрываем ::after при фокусе или заполненности
+function updateFormState() {
+  if (document.activeElement === input || input.value.trim() !== "") {
+    form.classList.add('hide-after');
+  } else {
+    form.classList.remove('hide-after');
+  }
+}
+
+input.addEventListener('input', updateFormState);
+input.addEventListener('focus', updateFormState);
+input.addEventListener('blur', updateFormState);
+
