@@ -53,11 +53,23 @@ const swiper = new Swiper(".swiper-container", {
   direction: "horizontal",
   resistance: true, // Включаем сопротивление краям (по умолчанию)
   resistanceRatio: 0, // Убираем "растяжение" при сопротивлении
-  slidesPerView: 6, // Количество видимых слайдов
+  slidesPerView: 3, // Количество видимых слайдов
   spaceBetween: 30, // Расстояние между слайдами
   navigation: {
     prevEl: ".custom-prev",
     nextEl: ".custom-next",
+  },
+  breakpoints: {
+    800: {
+      slidesPerView: 4, 
+    },
+ 
+        1100: {
+      slidesPerView: 5, 
+    },
+    1500:{
+      slidesPerView: 6, 
+    }
   },
   pagination: {
     el: ".swiper-pagination",
