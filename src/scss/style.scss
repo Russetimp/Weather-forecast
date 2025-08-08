@@ -62,13 +62,16 @@ body {
   color: var(--font-color);
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0.747);
-}
-
-.page {
   display: flex;
   flex-direction: column;
   height: 100dvh;
 }
+
+// .page {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100dvh;
+// }
 
 .header {
   box-sizing: border-box;
@@ -144,11 +147,11 @@ body {
 main {
   box-sizing: border-box;
   padding-top: clamp(20px, 2.6vw, 50px);
-  padding-bottom: clamp(10px, 1.56vw, 30px);
-    // padding-bottom: clamp(10px, 1.56vw, 30px);
+  margin-bottom: 30px;
+  // padding-bottom: clamp(10px, 1.56vw, 30px);
   // margin-bottom: clamp(10px, 1.56vw, 50px);
   // flex: 1 0 auto; /* Занимает всё оставшееся пространство */
-  flex-grow: 1;
+  // flex-grow: 1;
   width: 100%;
   overflow: auto; /* если контент main не помещается */
   display: flex;
@@ -226,10 +229,11 @@ main {
   display: flex;
   flex-direction: column;
   // background-color: burlywood;
-  justify-content: space-between;
+  // justify-content: space-between;
   width: 50%;
   padding-top: 10px;
-  max-height: 830px;
+  gap: 30px;
+  // max-height: 830px;
 }
 
 .one-day {
@@ -259,8 +263,8 @@ main {
       margin-bottom: 0.2em;
     }
     &__image {
-      height: 2.2em;
-      width: 2.2em;
+      height: 2.5em;
+      aspect-ratio: 1 / 1;
     }
     &__temperature {
       margin-top: 0.1em;
@@ -310,11 +314,14 @@ main {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
     grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
-    margin-top: 30px;
+    // margin-top: 20px;
     padding-top: 30px;
     padding-bottom: 20px;
     font-size: var(--font-size-base);
-    gap: 10px;
+    gap: clamp(4px, 0.5vw, 10px);
+    @media (max-width: 1000px) {
+      // line-height: 0.75;
+    }
   }
 
   &__header {
@@ -337,8 +344,8 @@ main {
   }
 
   &__icon {
-    height: 2.2em;
-    width: 2.2em;
+    height: 2.5em;
+    aspect-ratio: 1/1;
     vertical-align: middle;
   }
 
@@ -357,5 +364,6 @@ footer {
   text-align: center;
   min-height: 25px;
   width: 100%;
-  flex-shrink: 0;
+  // flex-shrink: 0;
+  margin-top: auto;
 }
