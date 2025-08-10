@@ -1,0 +1,11 @@
+@use "../helpers" as *;
+
+.detailed {
+  box-sizing: border-box;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 10px;
+  gap: 30px;
+}

@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.current {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  max-height: 800px;
+
+  &__city {
+    font-size: clamp(28px, 4vh, 44px);
+    margin-block: 15px;
+  }
+  &__data {
+    font-size: var(--font-size-base);
+    margin-top: 0px;
+  }
+  &__temperatura {
+    font-size: clamp(88px, 12.9vh, 140px);
+    margin-block: 15px;
+  }
+
+  &-perceived {
+    font-size: var(--font-size-base);
+    &__icon {
+      vertical-align: middle;
+      @include square(1.5em);
+      display: inline-block;
+    }
+    &__temperature {
+      margin-top: 0.2em;
+    }
+  }
+}

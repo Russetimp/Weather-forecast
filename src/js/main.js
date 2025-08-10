@@ -1,6 +1,6 @@
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
-import "../scss/style.scss";
+import "../scss/main.scss";
 // запрос погоды
 // const API_KEY = import.meta.env.VITE_KEY;
 // const BASE_API_URL = " https://api.openweathermap.org/data/2.5/forecast";

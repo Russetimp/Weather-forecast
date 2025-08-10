@@ -1,0 +1,35 @@
+@use "../helpers" as *;
+
+
+.swiper {
+  &-container {
+    overflow: hidden; /* Скрываем ушедшие слайды */
+    position: relative;
+  }
+  &-wrapper {
+    display: flex; /* Слайды выстраиваются в ряд */
+  }
+  &-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Слайды не сжимаются */
+    font-size: var(--font-size-base);
+    &__time {
+      margin-bottom: 0.2em;
+    }
+    &__image {
+    @include square(2.5em);
+    }
+    &__temperature {
+      margin-top: 0.1em;
+      margin-bottom: 0;
+    }
+  }
+
+  &-button-prev::after,
+  &-button-next::after {
+    content: ""; /* Убираем стандартные стрелки */
+  }
+}

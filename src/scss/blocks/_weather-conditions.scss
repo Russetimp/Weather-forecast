@@ -1,0 +1,6 @@
+@use "../helpers" as *;
+
+.weather-conditions {
+  display: flex;
+  gap: 30px;
+}

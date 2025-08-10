@@ -1,0 +1,19 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'helpers' as *;
+@use 'globals';
+
+
+@use 'blocks/header';
+@use 'blocks/current';
+@use 'blocks/weather-conditions';
+@use 'blocks/weather-condition';
+@use 'blocks/detailed';
+@use 'blocks/one-day';
+@use 'blocks/swiper';
+@use 'blocks/arrow';
+@use 'blocks/weather-grid';
+@use 'blocks/footer';
+

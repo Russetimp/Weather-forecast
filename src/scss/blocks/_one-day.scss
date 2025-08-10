@@ -1,0 +1,9 @@
+@use "../helpers" as *;
+
+.one-day {
+  box-sizing: border-box;
+  position: relative;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding-block: clamp(20px, 2.77vh, 30px);
+}

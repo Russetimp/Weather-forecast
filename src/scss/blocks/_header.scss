@@ -1,0 +1,63 @@
+@use "../helpers" as *;
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-block: 10px;
+  height: 100px;
+
+  &.container {
+    max-width: calc(
+      var(--container-width) + var(--container-padding-x) * 2 + 100px
+    );
+  }
+  &__form {
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+      background: url(/public/images/Лупа.svg);
+      // background: url(/public/images/icons8-лупа.svg);
+      @include square(30px);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &.hide-after::after {
+      opacity: 0;
+      transition: opacity var(--transition-duration);
+      pointer-events: none;
+    }
+  }
+
+  &__input {
+    font-size: clamp(18px, 2.6vh, 28px);
+    width: clamp(300px, 37vh, 400px);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    border: var(--border);
+    outline: none;
+    caret-color: var(--font-color);
+    color: var(--font-color);
+    &::placeholder {
+      color: var(--font-color);
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 0; /* или color: transparent; */
+        transition: opacity var(--transition-duration);
+      }
+      &::after {
+        content: none; /* полностью скрыть */
+        /* либо opacity: 0; или display: none; по ситуации */
+      }
+    }
+  }
+}

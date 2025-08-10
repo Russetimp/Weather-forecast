@@ -1,0 +1,49 @@
+@use "../helpers" as *;
+
+.weather-grid {
+  padding-inline: 30px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
+    grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: var(--font-size-base);
+    gap: clamp(4px, 0.9vh, 10px);
+  }
+
+  &__header {
+    grid-column: 1 / -1; /* Заголовок на всю строку */
+    width: 100%;
+    text-align: start;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--font-color); /* Подчеркивание заголовка */
+  }
+
+  &__day,
+  &__icon,
+  &__temp,
+  &__description {
+    align-self: center;
+  }
+
+  &__day {
+    text-align: start;
+  }
+
+  &__icon {
+    @include square(2.5em);
+    vertical-align: middle;
+  }
+
+  &__temp {
+    text-align: end;
+  }
+
+  &__description {
+    padding-left: 10px;
+  }
+}
