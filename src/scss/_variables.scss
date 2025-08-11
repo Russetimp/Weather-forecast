@@ -15,4 +15,10 @@
   --form-after-size: 40px;
 
   --transition-duration: 0.2s;
+
+    @include mobile {
+     --border-radius: 7px;
+    //  --font-size-base: clamp(20px, 2.78vh, 30px);
+     --container-padding-x: 5px;
+  }
 }

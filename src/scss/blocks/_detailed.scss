@@ -8,4 +8,7 @@
   width: 50%;
   padding-top: 10px;
   gap: 30px;
+  @include mobile {
+    width: 100%;
+  }
 }

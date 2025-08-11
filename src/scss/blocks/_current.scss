@@ -9,6 +9,11 @@
   padding-bottom: 30px;
   max-height: 800px;
 
+  @include mobile {
+    padding-left: 20px;
+    width: 100%;
+  }
+
   &__city {
     font-size: clamp(28px, 4vh, 44px);
     margin-block: 15px;

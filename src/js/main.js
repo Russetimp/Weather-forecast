@@ -61,15 +61,15 @@ const swiper = new Swiper(".swiper-container", {
   },
   breakpoints: {
     800: {
-      slidesPerView: 4, 
+      slidesPerView: 4,
     },
- 
-        1100: {
-      slidesPerView: 5, 
+
+    1100: {
+      slidesPerView: 5,
     },
-    1500:{
-      slidesPerView: 6, 
-    }
+    1500: {
+      slidesPerView: 6,
+    },
   },
   pagination: {
     el: ".swiper-pagination",
@@ -77,19 +77,18 @@ const swiper = new Swiper(".swiper-container", {
   },
 });
 
-const form = document.querySelector('.header__form');
-const input = form.querySelector('.header__input');
+const form = document.querySelector(".header__form");
+const input = form.querySelector(".header__input");
 
 // Скрываем ::after при фокусе или заполненности
 function updateFormState() {
   if (document.activeElement === input || input.value.trim() !== "") {
-    form.classList.add('hide-after');
+    form.classList.add("hide-after");
   } else {
-    form.classList.remove('hide-after');
+    form.classList.remove("hide-after");
   }
 }
 
-input.addEventListener('input', updateFormState);
-input.addEventListener('focus', updateFormState);
-input.addEventListener('blur', updateFormState);
-
+input.addEventListener("input", updateFormState);
+input.addEventListener("focus", updateFormState);
+input.addEventListener("blur", updateFormState);

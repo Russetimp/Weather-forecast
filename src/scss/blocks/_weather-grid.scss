@@ -9,10 +9,11 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
     grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: clamp(15px, 2.7vh, 30px);
+    padding-bottom: clamp(5px, 1.8vh, 20px);;
     font-size: var(--font-size-base);
     gap: clamp(4px, 0.9vh, 10px);
+    
   }
 
   &__header {

@@ -8,14 +8,26 @@
   width: 100%;
   padding-block: 10px;
   height: 100px;
+  // position: static;
+
+  @include mobile {
+    height: 90px;
+  }
 
   &.container {
     max-width: calc(
       var(--container-width) + var(--container-padding-x) * 2 + 100px
     );
   }
+  
   &__form {
+    font-size: clamp(18px, 2.6vh, 28px);
     position: relative;
+
+    @include mobile {
+      font-size: 18px;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -25,10 +37,15 @@
       right: 10px;
       background: url(/public/images/Лупа.svg);
       // background: url(/public/images/icons8-лупа.svg);
-      @include square(30px);
+      @include square(1.4em);
       background-repeat: no-repeat;
       background-size: contain;
+
+      @include mobile {
+        @include square(1.4em);
+      }
     }
+
     &.hide-after::after {
       opacity: 0;
       transition: opacity var(--transition-duration);
@@ -37,15 +54,21 @@
   }
 
   &__input {
-    font-size: clamp(18px, 2.6vh, 28px);
+    font-size: 1em;
     width: clamp(300px, 37vh, 400px);
-    padding: 15px;
+    padding: 12px;
     border-radius: var(--border-radius);
     background-color: var(--background-color);
     border: var(--border);
     outline: none;
     caret-color: var(--font-color);
     color: var(--font-color);
+
+    @include mobile {
+      // width: clamp(300px, 37vh, 400px);
+      width: 250px;
+    }
+
     &::placeholder {
       color: var(--font-color);
     }

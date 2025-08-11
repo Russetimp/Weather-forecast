@@ -5,3 +5,9 @@ $mobile: 815.98px;
     @content;
   }
 }
+
+@mixin mobile-above {
+  @media (width > $mobile) {
+    @content;
+  }
+}

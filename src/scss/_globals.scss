@@ -1,4 +1,4 @@
-@use 'helpers' as *;
+@use "helpers" as *;
 
 body {
   font-family: var(--font-family-base);
@@ -7,15 +7,21 @@ body {
   background-color: rgba(0, 0, 0, 0.747);
   display: flex;
   flex-direction: column;
-  height: 100dvh;
-}
 
+  @include mobile-above {
+    height: 100vh;
+  }
+}
 
 main {
   box-sizing: border-box;
-  padding-top: clamp(10px, 4vh, 100px);
+  padding-top: clamp(10px, 3vh, 100px);
   width: 100%;
-  overflow: auto; /* если контент main не помещается */
+  // overflow: auto; /* если контент main не помещается */
   display: flex;
   gap: 10px;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
