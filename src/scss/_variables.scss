@@ -1,13 +1,14 @@
-@use 'helpers' as *;
+@use "helpers" as *;
 
 :root {
   --font-family-base: "Roboto", sans-serif;
   --font-size-base: clamp(20px, 2.78vh, 30px);
   --font-color: white;
 
-  --border-radius: 14px;
+  --border-radius: clamp(12px, 1.3vw, 16px);
   --border: 0px;
   --background-color: rgba(204, 202, 202, 0.5);
+  --body-background-color: rgba(0, 0, 0, 0.747);
 
   --container-width: 1600px;
   --container-padding-x: 20px;
@@ -16,9 +17,9 @@
 
   --transition-duration: 0.2s;
 
-    @include mobile {
-     --border-radius: 7px;
-    //  --font-size-base: clamp(20px, 2.78vh, 30px);
-     --container-padding-x: 5px;
+  @include mobile {
+    --border-radius: clamp(5px, 1.9vw, 12px);
+    --font-size-base: clamp(14px, 4.8vw, 22px);
+    --container-padding-x: clamp(4px, 1.22vw, 10px);
   }
 }

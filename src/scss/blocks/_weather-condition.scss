@@ -13,7 +13,13 @@
     display: inline-block;
     background-color: var(--background-color);
     border-radius: var(--border-radius);
+    @include mobile {
+    @include square(65px);
+      @include square(3.25em);
+    }
+
   }
+
   &__value {
     margin-top: 0.5em;
     margin-bottom: 0;

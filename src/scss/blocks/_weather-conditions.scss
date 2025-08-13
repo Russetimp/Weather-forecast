@@ -3,4 +3,8 @@
 .weather-conditions {
   display: flex;
   gap: 30px;
+
+  @include mobile {
+    gap: 20px;
+  }
 }

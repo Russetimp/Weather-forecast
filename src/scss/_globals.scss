@@ -1,15 +1,19 @@
 @use "helpers" as *;
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family-base);
   color: var(--font-color);
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.747);
+  background-color: var(--body-background-color);
   display: flex;
   flex-direction: column;
 
   @include mobile-above {
-    height: 100vh;
+    height: 100dvh;
   }
 }
 
@@ -23,5 +27,7 @@ main {
 
   @include mobile {
     flex-direction: column;
+    padding-top: 40px;
+    // padding-top: clamp(10px, 3vh, 100px);
   }
 }

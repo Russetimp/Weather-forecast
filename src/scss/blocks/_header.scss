@@ -8,10 +8,9 @@
   width: 100%;
   padding-block: 10px;
   height: 100px;
-  // position: static;
 
   @include mobile {
-    height: 90px;
+    height: 70px;
   }
 
   &.container {
@@ -19,13 +18,13 @@
       var(--container-width) + var(--container-padding-x) * 2 + 100px
     );
   }
-  
+
   &__form {
     font-size: clamp(18px, 2.6vh, 28px);
     position: relative;
 
     @include mobile {
-      font-size: 18px;
+      font-size: clamp(14px, 4.37vw, 20px);
     }
 
     &::after {
@@ -36,7 +35,6 @@
       transform: translateY(-50%);
       right: 10px;
       background: url(/public/images/Лупа.svg);
-      // background: url(/public/images/icons8-лупа.svg);
       @include square(1.4em);
       background-repeat: no-repeat;
       background-size: contain;
@@ -65,18 +63,19 @@
     color: var(--font-color);
 
     @include mobile {
-      // width: clamp(300px, 37vh, 400px);
-      width: 250px;
+      width: clamp(200px, 60vw, 275px);
     }
 
     &::placeholder {
       color: var(--font-color);
     }
+
     &:focus {
       &::placeholder {
         opacity: 0; /* или color: transparent; */
         transition: opacity var(--transition-duration);
       }
+
       &::after {
         content: none; /* полностью скрыть */
         /* либо opacity: 0; или display: none; по ситуации */

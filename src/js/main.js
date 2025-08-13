@@ -53,13 +53,20 @@ const swiper = new Swiper(".swiper-container", {
   direction: "horizontal",
   resistance: true, // Включаем сопротивление краям (по умолчанию)
   resistanceRatio: 0, // Убираем "растяжение" при сопротивлении
-  slidesPerView: 3, // Количество видимых слайдов
-  spaceBetween: 30, // Расстояние между слайдами
+  slidesPerView: 5, // Количество видимых слайдов
+  spaceBetween: 10, // Расстояние между слайдами
   navigation: {
     prevEl: ".custom-prev",
     nextEl: ".custom-next",
   },
+
   breakpoints: {
+    600: {
+      slidesPerView: 6,
+    },
+    700: {
+      slidesPerView: 7,
+    },
     800: {
       slidesPerView: 4,
     },
@@ -92,3 +99,6 @@ function updateFormState() {
 input.addEventListener("input", updateFormState);
 input.addEventListener("focus", updateFormState);
 input.addEventListener("blur", updateFormState);
+
+// const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+// console.log(scrollbarWidth);

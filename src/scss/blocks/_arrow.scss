@@ -11,9 +11,12 @@
       scale: 2.2; /* плавное увеличение размера на 10% */
     }
   }
+
   &-left {
     rotate: 180deg;
   }
+  
+
 }
 
 .custom-prev,
@@ -24,5 +27,9 @@
   &.swiper-button-disabled {
     opacity: 0;
     pointer-events: none;
+  }
+
+    @include mobile {
+    @include visually-hidden;
   }
 }

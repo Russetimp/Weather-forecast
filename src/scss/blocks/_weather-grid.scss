@@ -2,18 +2,26 @@
 
 .weather-grid {
   padding-inline: 30px;
+  padding-inline: clamp(15px, 2.67vw, 30px);
   background-color: var(--background-color);
   border-radius: var(--border-radius);
+   @include mobile {
+      padding-inline: clamp(10px, 4.8vw, 20px);
+    }
 
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
     grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
     padding-top: clamp(15px, 2.7vh, 30px);
-    padding-bottom: clamp(5px, 1.8vh, 20px);;
+    padding-bottom: clamp(5px, 1.8vh, 20px);
     font-size: var(--font-size-base);
     gap: clamp(4px, 0.9vh, 10px);
-    
+
+    @include mobile {
+      padding-top: clamp(15px, 6vw, 25px);
+      padding-bottom: clamp(10px, 3.6vw, 15px);
+    }
   }
 
   &__header {
