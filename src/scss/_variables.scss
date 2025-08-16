@@ -6,18 +6,21 @@
   --font-color: white;
 
   --border-radius: clamp(12px, 1.3vw, 16px);
+  --border-radius-input: clamp(6px, 0.6vw, 8px);
   --border: 0px;
   --background-color: rgba(204, 202, 202, 0.5);
   --body-background-color: rgba(0, 0, 0, 0.747);
 
-  --container-width: 1600px;
+  --container-width: clamp(500px, 83vw, 1600px);
   --container-padding-x: 20px;
+
 
   --form-after-size: 40px;
 
   --transition-duration: 0.2s;
 
   @include mobile {
+    --border-radius-input: clamp(3px, 0.9vw, 6px);
     --border-radius: clamp(5px, 1.9vw, 12px);
     --font-size-base: clamp(14px, 4.8vw, 22px);
     --container-padding-x: clamp(4px, 1.22vw, 10px);

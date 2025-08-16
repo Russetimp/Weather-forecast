@@ -1,6 +1,7 @@
 @use "helpers" as *;
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -19,7 +20,7 @@ body {
 
 main {
   box-sizing: border-box;
-  padding-top: clamp(10px, 3vh, 100px);
+  padding-top: clamp(10px, 5vh, 100px);
   width: 100%;
   // overflow: auto; /* если контент main не помещается */
   display: flex;

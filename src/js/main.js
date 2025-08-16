@@ -1,6 +1,7 @@
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import "../scss/main.scss";
+
 // запрос погоды
 // const API_KEY = import.meta.env.VITE_KEY;
 // const BASE_API_URL = " https://api.openweathermap.org/data/2.5/forecast";
@@ -70,7 +71,6 @@ const swiper = new Swiper(".swiper-container", {
     800: {
       slidesPerView: 4,
     },
-
     1100: {
       slidesPerView: 5,
     },
@@ -78,6 +78,7 @@ const swiper = new Swiper(".swiper-container", {
       slidesPerView: 6,
     },
   },
+
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -95,7 +96,6 @@ function updateFormState() {
     form.classList.remove("hide-after");
   }
 }
-
 input.addEventListener("input", updateFormState);
 input.addEventListener("focus", updateFormState);
 input.addEventListener("blur", updateFormState);

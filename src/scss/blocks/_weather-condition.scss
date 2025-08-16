@@ -13,6 +13,7 @@
     display: inline-block;
     background-color: var(--background-color);
     border-radius: var(--border-radius);
+    @include square(3.25em);
     @include mobile {
     @include square(65px);
       @include square(3.25em);

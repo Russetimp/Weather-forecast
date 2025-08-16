@@ -5,6 +5,7 @@
   padding-inline: clamp(15px, 2.67vw, 30px);
   background-color: var(--background-color);
   border-radius: var(--border-radius);
+  overflow: auto;
    @include mobile {
       padding-inline: clamp(10px, 4.8vw, 20px);
     }
