@@ -17,9 +17,9 @@
       </form>
     </header>
 
-    <main class="container">
-      <div class="current">
-        <!-- <!-- <div class="current__city-data">
+    <main class="main container">
+      <!-- <div class="current">
+        <div class="current__city-data">
           <p class="current__city">Москва</p>
           <p class="current__data">Пятница, 14 марта 2025г</p>
         </div>
@@ -27,16 +27,18 @@
         <div class="current__weather">
           <p class="current__temperature">6&deg;</p>
           <div class="current-perceived">
-            <img
-              src="/images/Иконки погоды/10n@2x.png"
-              alt=""
-              width="45"
-              height="45"
-              class="current-perceived__icon"
-            />
-            <span class="current-perceived__description">
-              Небольшая облачность
-            </span>
+            <div class="current-perceived__top">
+              <img
+                src="/images/Иконки погоды/10n@2x.png"
+                alt=""
+                width="45"
+                height="45"
+                class="current-perceived__icon"
+              />
+              <span class="current-perceived__description">
+                Небольшая облачность
+              </span>
+            </div>
             <p class="current-perceived__temperature">Ощущается как 3&deg;</p>
           </div>
 
@@ -59,7 +61,7 @@
                 height="90"
                 class="weather-condition__icon"
               />
-              <p class="weather-condition__value">82%</p>
+              <p class="weather-condition__value">82 %</p>
             </div>
             <div class="weather-condition">
               <img
@@ -69,17 +71,19 @@
                 height="90"
                 class="weather-condition__icon"
               />
-              <p class="weather-condition__value">10км</p>
+              <p class="weather-condition__value">10 км</p>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
+      <div class="current"></div>
 
       <div class="detailed">
         <div class="one-day">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <time class="swiper-slide__time" datetime="00:00">00:00</time>
                 <img
                   src="/images/Иконки погоды/10n@2x.png"
@@ -166,7 +170,7 @@
                   class="swiper-slide__image"
                 />
                 <p class="swiper-slide__temperature">8&deg;</p>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="swiper-button-prev custom-prev">
@@ -294,6 +298,6 @@
     <footer class="container">
       <span>Разработал: Шведов Илья Дмитриевич</span>
     </footer>
-    <script src="/src/js/main.js" type="module" ></script>
+    <script src="/src/js/main.js" type="module"></script>
   </body>
 </html>
