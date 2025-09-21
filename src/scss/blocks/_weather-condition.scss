@@ -5,20 +5,30 @@
   flex-direction: column;
   align-items: center;
   font-size: var(--font-size-base);
+  
 
-  &__icon {
+  &__icon-wrapper {
     // @include square(90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     vertical-align: middle;
     object-fit: contain;
-    display: inline-block;
+    // display: inline-block;
     background-color: var(--background-color);
     border-radius: var(--border-radius);
     @include square(3.25em);
+    
     @include mobile {
     @include square(65px);
-      @include square(3.25em);
+    @include square(3.25em);
     }
 
+  }
+
+  &__icon{
+    height: 40%;
+    width: auto;
   }
 
   &__value {

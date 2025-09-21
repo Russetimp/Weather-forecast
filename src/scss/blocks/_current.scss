@@ -34,6 +34,9 @@
   &__data {
     font-size: var(--font-size-base);
     margin-block: 0px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__temperature {
@@ -49,10 +52,21 @@
   &-perceived {
     font-size: var(--font-size-base);
 
+    &__top {
+      display: flex;
+      align-items: center;
+    }
+
     &__icon {
-      vertical-align: middle;
       @include square(1.5em);
       display: inline-block;
+    }
+
+    &__description {
+      display: inline-block; // чтобы ::first-letter заработал на span
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
 
     &__temperature {
