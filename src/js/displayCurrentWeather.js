@@ -42,7 +42,6 @@ export async function displayCurrentWeather(lat, lon) {
       timeZone: "UTC",
     });
     console.log(firstDayOfWeek);
-
     //Создаем содержимое current__data
     let currentData =
       firstDayOfWeek +
