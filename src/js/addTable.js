@@ -1,4 +1,10 @@
-// Добавление таблицы
+/**
+ * Создает и отображает таблицу с прогнозом погоды на 5 дней
+ *
+ * @param {Object} data - Данные от API OpenWeatherMap (5-day forecast)
+ * @param {Array} data.list - Список прогнозов с интервалом 3 часа
+ * @param {Date} today - Текущая дата и время в UTC
+*/
 
 export async function addTable(data, today) {
   let firstDayOfWeek = today.toLocaleDateString("ru-RU", {

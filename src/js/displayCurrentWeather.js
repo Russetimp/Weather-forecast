@@ -1,4 +1,12 @@
-//Запрос текущей погоды и отрисовка current__city-data
+/**
+ * Запрашивает и текущую погоду для указанных координат
+ * Создает разметку "current" - информация о текущей погоде, включая температуру,
+ * влажность, ветер и видимость с локализованной датой на русском языке
+ *
+ * @param {number} lat - Широта местоположения
+ * @param {number} lon - Долгота местоположения
+ * @throws {Error} При ошибках сети или некорректном ответе API
+*/
 
 const API_KEY = import.meta.env.VITE_KEY;
 const BASE_API_URL2 = "https://api.openweathermap.org/data/2.5/weather";
@@ -34,6 +42,7 @@ export async function displayCurrentWeather(lat, lon) {
       timeZone: "UTC",
     });
     console.log(firstDayOfWeek);
+
     //Создаем содержимое current__data
     let currentData =
       firstDayOfWeek +

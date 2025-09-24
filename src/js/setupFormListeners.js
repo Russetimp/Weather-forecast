@@ -3,7 +3,7 @@
  * Добавляет слушатели событий к input для обновления состояния формы.
  * @param {HTMLInputElement} input - Поле ввода
  * @param {HTMLElement} form - Элемент формы
- */
+*/
 
 export function setupFormListeners(input, form) {
   function updateFormState() {

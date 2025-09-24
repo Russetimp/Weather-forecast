@@ -1,13 +1,18 @@
+/**
+ * Добавляет слайдер с почасовым прогнозом погоды на ближайшие 2 дня
+ * Фильтрует данные API для отображения прогноза до конца второго дня
+ * 
+ * @param {Object} api - Данные от API OpenWeatherMap (5-day forecast)
+ * @param {number} timezone - Смещение временной зоны в секундах
+ * @param {Date} today - Текущая дата (в UTC)
+*/
+
 import { initSwiper } from "./swiperInit.js";
+
 let swiper = null;
 export async function addSlider(api, timezone, today) {
   const data = api;
   try {
-    // const timezone = data.city.timezone;
-    // //Получение первого дня
-    // let today = new Date((data.list[0].dt + timezone) * 1000);
-    // console.log(today);
-
     // Определяем третий день для фильтрации слайдера
     let thirdDay = new Date(
       Date.UTC(

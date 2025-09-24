@@ -1,4 +1,8 @@
-// Инициализация слайдера
+/**
+ * Инициализирует и настраивает экземпляр Swiper для горизонтального слайдера
+ *
+ * @see {@link https://swiperjs.com/swiper-api} Swiper API Documentation
+*/
 
 import Swiper from "swiper/bundle";
 
@@ -8,7 +12,7 @@ export function initSwiper() {
     resistance: true, // Включаем сопротивление краям (по умолчанию)
     resistanceRatio: 0, // Убираем "растяжение" при сопротивлении
     slidesPerView: 5, // Количество видимых слайдов
-    slidesPerGroup:1,
+    slidesPerGroup: 1,
     spaceBetween: 10, // Расстояние между слайдами
     //  loop: false,
     navigation: {
@@ -40,5 +44,5 @@ export function initSwiper() {
     },
   });
 
-    return swiper; // если нужно использовать объект слайдера в дальнейшем
+  return swiper;
 }

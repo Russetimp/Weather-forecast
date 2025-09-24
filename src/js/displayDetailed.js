@@ -1,7 +1,15 @@
-// Функция Запроса к серверу
+/**
+ * Создание "detailed" - совместное отображение данных слайдера и таблицы прогноза
+ * 
+ * @param {string} locationName - Название населенного пункта для поиска погоды
+ * 
+ * @see {@link module:api} Функция запроса к API
+ * @see {@link module:addSlider} Функция создания слайдера
+ * @see {@link module:addTable} Функция создания таблицы
+*/
 
-import { addSlider } from "./addSlider";
 import { api } from "./api";
+import { addSlider } from "./addSlider";
 import { addTable } from "./addTable";
 
 export async function displayDetailed(locationName) {

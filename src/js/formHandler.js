@@ -6,7 +6,7 @@
  * @param {HTMLFormElement} form - Элемент формы.
  * @param {HTMLInputElement} input - Поле ввода города.
  * @param {function} getWeatherByLocation - Функция для получения погоды по городу.
- */
+*/
 
 export function handleFormSubmit(form, input, getWeatherByLocation) {
   form.onsubmit = function (e) {
