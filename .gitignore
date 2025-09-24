@@ -22,9 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-Заметки.js
-Черновик.js
-Чистовик.js
+
+Draft.js
+Clean.js
 
 
 .env
