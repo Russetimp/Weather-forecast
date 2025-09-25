@@ -6,16 +6,12 @@
  * @param {number} lat - Широта местоположения
  * @param {number} lon - Долгота местоположения
  * @throws {Error} При ошибках сети или некорректном ответе API
-*/
+ */
 
-const API_KEY = import.meta.env.VITE_KEY;
-const BASE_API_URL2 = "https://api.openweathermap.org/data/2.5/weather";
 const main = document.querySelector(".main");
 const current = document.querySelector(".current");
 
-export async function displayCurrentWeather(lat, lon) {
-  const url = `${BASE_API_URL2}?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=ru&units=metric`;
-
+export async function displayCurrentWeather(api) {
   try {
     /*Добавить обработку ошибок 
     try {
@@ -26,9 +22,7 @@ export async function displayCurrentWeather(lat, lon) {
     console.error("Ошибка запроса погоды:", error.message);
     throw error; // или обработать, как нужно
 }*/
-
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = api;
     console.log(data);
     console.log(data.name);
 

@@ -1,11 +1,11 @@
 /**
  * Добавляет слайдер с почасовым прогнозом погоды на ближайшие 2 дня
  * Фильтрует данные API для отображения прогноза до конца второго дня
- * 
+ *
  * @param {Object} api - Данные от API OpenWeatherMap (5-day forecast)
  * @param {number} timezone - Смещение временной зоны в секундах
  * @param {Date} today - Текущая дата (в UTC)
-*/
+ */
 
 import { initSwiper } from "./swiperInit.js";
 

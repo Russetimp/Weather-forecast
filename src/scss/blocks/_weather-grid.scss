@@ -1,6 +1,7 @@
 @use "../helpers" as *;
 
 .weather-grid {
+  visibility: hidden;
   padding-inline: 30px;
   padding-inline: clamp(15px, 2.67vw, 30px);
   background-color: var(--background-color);
@@ -11,6 +12,7 @@
     }
 
   &__wrapper {
+    
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
     grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */

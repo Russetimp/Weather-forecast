@@ -4,14 +4,14 @@
  * @param {Object} data - Данные от API OpenWeatherMap (5-day forecast)
  * @param {Array} data.list - Список прогнозов с интервалом 3 часа
  * @param {Date} today - Текущая дата и время в UTC
-*/
+ */
 
 export async function addTable(data, today) {
   let firstDayOfWeek = today.toLocaleDateString("ru-RU", {
     weekday: "long",
     timeZone: "UTC",
   });
-//   console.log("firstDayOfWeek", firstDayOfWeek);
+  //   console.log("firstDayOfWeek", firstDayOfWeek);
 
   //Получение дней недели для таблицы
   const daysMap = {
@@ -34,11 +34,11 @@ export async function addTable(data, today) {
     const dayIndex = (startIndex + i) % daysArr.length;
     fiveDays.push(daysMap[daysArr[dayIndex]]);
   }
-//   console.log(fiveDays);
+  //   console.log(fiveDays);
 
   // Получение номеров из массива
   let hours = today.getUTCHours();
-//   console.log(hours);
+  //   console.log(hours);
   const fiveDays2 = [];
   const nowNext = function (hours) {
     let now;
@@ -55,7 +55,7 @@ export async function addTable(data, today) {
     } else {
       now = ((15 - Math.floor(hours / 3) * 3 + 24) % 24) / 3;
       next = now + 8;
-    //   console.log("< 15 hours:", hours, "now:", now, "next:", next);
+      //   console.log("< 15 hours:", hours, "now:", now, "next:", next);
     }
     fiveDays2.push(now);
     fiveDays2.push(next);

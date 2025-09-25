@@ -2,7 +2,7 @@
  * Инициализирует и настраивает экземпляр Swiper для горизонтального слайдера
  *
  * @see {@link https://swiperjs.com/swiper-api} Swiper API Documentation
-*/
+ */
 
 import Swiper from "swiper/bundle";
 

@@ -1,18 +1,17 @@
 /**
  * Выполняет запрос к OpenWeatherMap API для получения прогноза погоды на 5 дней
  * с интервалом 3 часа для указанного населенного пункта
- * 
+ *
  * @param {string} locationName - Название города или населенного пункта
  * @returns {Promise<Object>} Ответ API с данными прогноза погоды
  * @throws {Error} При ошибках сети, неверном API ключе или городе
  * @see {@link https://openweathermap.org/api/5-day-forecast} Документация API
-*/
-
+ */
 
 const API_KEY = import.meta.env.VITE_KEY;
 const BASE_API_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
-export async function api(locationName) {
+export async function getWeatherByCityName(locationName) {
   const url = `${BASE_API_URL}?q=${locationName}&appid=${API_KEY}&lang=ru&units=metric`;
   try {
     const response = await fetch(url);
