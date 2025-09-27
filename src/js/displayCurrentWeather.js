@@ -25,6 +25,7 @@ export async function displayCurrentWeather(api) {
     const data = api;
     console.log(data);
     console.log(data.name);
+    console.log(data.weather[0].icon);
 
     // Получаем дату с учетом UTC
     let today = new Date((data.dt + data.timezone) * 1000);
