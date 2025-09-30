@@ -1,4 +1,4 @@
-export async function rainEffect(dataGeolocation) {
+export async function updateRainEffect(dataGeolocation) {
   let rainContainer = document.getElementById("rain-container");
 
   const rainIcon = dataGeolocation.weather[0].icon;

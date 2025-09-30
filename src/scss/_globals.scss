@@ -9,10 +9,12 @@ body {
   font-family: var(--font-family-base);
   color: var(--font-color);
   font-weight: 400;
-  background-color: var(--body-background-color);
   display: flex;
   flex-direction: column;
-
+  transition: background-color var(--transition-duration)ease-in-out,
+    color var(--transition-duration) ease-in-out;
+  // transition: background-color var(--transition-duration)ease,
+  //   color var(--transition-duration) ease;
   @include mobile-above {
     height: 100dvh;
   }
@@ -22,13 +24,11 @@ main {
   box-sizing: border-box;
   padding-top: clamp(10px, 5vh, 100px);
   width: 100%;
-  // overflow: auto; /* если контент main не помещается */
   display: flex;
   gap: 10px;
 
   @include mobile {
     flex-direction: column;
     padding-top: 40px;
-    // padding-top: clamp(10px, 3vh, 100px);
   }
 }

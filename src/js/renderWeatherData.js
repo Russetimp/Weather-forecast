@@ -24,7 +24,9 @@ import { getWeatherByCoordinates } from "./getWeatherByCoordinates";
 import { addSlider } from "./addSlider";
 import { addTable } from "./addTable";
 import { displayCurrentWeather } from "./displayCurrentWeather";
-import { rainEffect } from "./rainEffect";
+import { updateRainEffect } from "./updateRainEffect";
+import { updateWeatherBackground } from "./updateWeatherBackground";
+import { updateColorTheme } from "./updateColorTheme";
 
 export async function renderWeatherData(
   locationName = null,
@@ -70,7 +72,13 @@ export async function renderWeatherData(
     document.querySelector(".weather-grid").style.visibility = "visible"; // показываем таблицу
 
     //Дождь
-    await rainEffect(dataGeolocation);
+    await updateRainEffect(dataGeolocation);
+
+    //Фон
+    await updateWeatherBackground(dataGeolocation);
+
+    //Тема
+    await updateColorTheme(dataGeolocation);
   } catch (error) {
     console.error("Ошибка при отображении данных:", error.message);
   }

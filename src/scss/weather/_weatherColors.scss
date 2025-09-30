@@ -1,0 +1,117 @@
+@use "../helpers" as *;
+
+$weather-styles: (
+  // дневные (светлые)
+  "01d": (#87ceeb, #4ad3e5),
+  "02d": (#c0c0c0, #87ceeb),
+  "03d": (#d3d3d3, #87cefa),
+  "04d": (#b0b0b0, #808080),
+  "09d": (#2f4f4f, #4682b4),
+  "10d": (#2f4f4f, #4682b4),
+  "11d": (#2f4f4f, #1e90ff),
+  "50d": (#f0f0f0, #e2e2e2),
+
+  // ночные (темные)
+  "01n": (#2e3a59, #1a1a40),
+  "02n": (#2f4f4f, #1c1c1c),
+  "03n": (#4a4a4a, #2c3e50),
+  "04n": (#1e1e1e, #003366),
+  "09n": (#2d2d2d, #0f0f0f),
+  "10n": (#2d2d2d, #0f0f0f),
+  "50n": (#2f2f2f, #1a1a1a)
+);
+
+@each $key, $colors in $weather-styles {
+  .weather-#{$key} {
+    @include weather-bg(nth($colors, 1), nth($colors, 2));
+  }
+}
+
+ // Дневные стили 
+
+
+// .weather-01d {
+//   background: linear-gradient(to bottom, #87ceeb, #4ad3e5);
+//   transition: all 0.5s ease-in-out;
+//   color: #1a1a1a;
+// }
+
+
+// .weather-02d {
+//   background: linear-gradient(to bottom, #c0c0c0, #87ceeb);
+//   transition: all 0.5s ease-in-out;
+//   color: #1a1a1a;
+// }
+
+
+// .weather-03d {
+//   background: linear-gradient(to bottom, #d3d3d3, #87cefa);
+//   transition: all 0.5s ease-in-out;
+//   color: #1a1a1a;
+// }
+
+
+// .weather-04d {
+//   background: linear-gradient(to bottom, #b0b0b0, #808080);
+//   transition: all 0.5s ease-in-out;
+//   color: #1a1a1a;
+// }
+
+
+// .weather-09d,
+// .weather-10d {
+//   background: linear-gradient(to bottom, #2f4f4f, #4682b4);
+//   transition: all 0.5s ease-in-out;
+//   color: #ffffff;
+// }
+
+
+// .weather-11d {
+//   background: linear-gradient(to bottom, #2f4f4f, #1e90ff);
+//   transition: all 0.5s ease-in-out;
+//   color: #ffffff;
+// }
+
+
+// .weather-50d {
+//   background: linear-gradient(to bottom, #f0f0f0, #e2e2e2);
+//   color: #1a1a1a;
+// }
+
+
+// // Ночные стили
+// .weather-01n {
+//   background: linear-gradient(to bottom, #2e3a59, #1a1a40);
+//   color: #ffffff;
+// }
+
+
+// .weather-02n {
+//   background: linear-gradient(to bottom, #2f4f4f, #1c1c1c);
+//   color: #ffffff;
+// }
+
+
+// .weather-03n {
+//   background: linear-gradient(to bottom, #4a4a4a, #2c3e50);
+//   color: #ffffff;
+// }
+
+
+// .weather-04n {
+//   background: linear-gradient(to bottom, #1e1e1e, #003366);
+//   color: #ffffff;
+// }
+
+
+// .weather-09n,
+// .weather-10n {
+//   background: linear-gradient(to bottom, #2d2d2d, #0f0f0f);
+//   color: #ffffff;
+// }
+
+
+// .weather-50n {
+//   background: linear-gradient(to bottom, #2f2f2f, #1a1a1a);
+//   color: #ffffff;
+// }
