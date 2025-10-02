@@ -79,6 +79,11 @@ export async function renderWeatherData(
 
     //Тема
     await updateColorTheme(dataGeolocation);
+
+    console.log("dataGeolocation", dataGeolocation);
+
+
+
   } catch (error) {
     console.error("Ошибка при отображении данных:", error.message);
   }
