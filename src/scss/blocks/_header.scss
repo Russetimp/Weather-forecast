@@ -3,25 +3,27 @@
 .header {
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding-block: 10px;
   height: 100px;
 
+  max-width: calc(
+    var(--container-width) + var(--container-padding-x) * 2 + 100px
+  );
+
   @include mobile {
     height: 70px;
-  }
-
-  &.container {
-    max-width: calc(
-      var(--container-width) + var(--container-padding-x) * 2 + 100px
-    );
   }
 
   &__form {
     font-size: clamp(18px, 2.6vh, 28px);
     position: relative;
+
+    @media (width <= 950px) {
+      font-size: clamp(18px, 1.9vh, 28px);
+    }
 
     @include mobile {
       font-size: clamp(14px, 4.37vw, 20px);
@@ -63,6 +65,10 @@
     caret-color: var(--font-color);
     color: var(--font-color);
 
+     @media (width <= 950px) {
+      width: clamp(300px, 26.6vh, 400px);
+    }
+
     @include mobile {
       width: clamp(200px, 60vw, 275px);
     }
@@ -80,6 +86,34 @@
       &::after {
         content: none; /* полностью скрыть */
         /* либо opacity: 0; или display: none; по ситуации */
+      }
+    }
+  }
+
+  &__burger-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    @include hover-bg-color;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: clamp(25px, 1.95vw, 32px);
+      height: clamp(20px, 1.5vw, 25px);
+      margin: 5px;
+    }
+
+    &-line {
+      display: block;
+      height: 3px;
+      background-color: var(--font-color);
+      border-radius: 2px;
+
+      @media (width <= 1000px) {
+        height: 2px;
       }
     }
   }

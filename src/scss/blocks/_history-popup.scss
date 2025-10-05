@@ -1,0 +1,89 @@
+@use "../helpers" as *;
+
+.history-popup {
+  position: fixed;
+  inset: 0;
+  overflow: auto;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+
+  padding-top: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(20px, 2.08vw, 40px);
+
+  font-size: var(--font-size-base);
+
+  background: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый */
+  backdrop-filter: blur(20px); /* Размытие фона */
+  color: white;
+
+  @media (height <= 1500px) {
+    padding-top: 10px;
+  }
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    // background: red;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 10px;
+    width: 100%;
+    max-width: calc(
+      var(--container-width) + var(--container-padding-x) * 2 + 100px
+    );
+    box-sizing: border-box;
+  }
+
+  &__close-button {
+    background: transparent;
+    color: black;
+    border: none;
+    @include square(1.2em);
+    cursor: pointer;
+    // @include hover-scale(1.1);
+    @include hover-bg-color;
+  }
+
+  &__clean-button {
+    color: black;
+    display: block;
+    padding-block: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    @include hover-bg-color;
+    font-size: 0.8em;
+  }
+
+  &__content {
+    padding-left: calc(clamp(25px, 3.5vw, 40px) + var(--container-padding-x));
+    padding-right: calc(20px + var(--container-padding-x));
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 12px;
+    padding-bottom: 10px;
+
+    @media (width <= 1250px) {
+      gap: 12px;
+    }
+
+    @include mobile {
+      padding-left: calc(20px + var(--container-padding-x));
+    }
+
+     @media (width <= 500px) {
+    justify-content: center;
+  }
+  }
+}
+
+.history-popup.visible {
+  transform: translateY(0);
+}

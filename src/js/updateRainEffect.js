@@ -13,6 +13,7 @@ export async function updateRainEffect(dataGeolocation) {
       rainContainer = document.createElement("div");
       rainContainer.id = "rain-container";
       document.body.insertBefore(rainContainer, document.body.firstChild);
+      
       // Функция случайного числа в диапазоне
       function random(min, max) {
         return Math.random() * (max - min) + min;

@@ -27,6 +27,8 @@ import { displayCurrentWeather } from "./displayCurrentWeather";
 import { updateRainEffect } from "./updateRainEffect";
 import { updateWeatherBackground } from "./updateWeatherBackground";
 import { updateColorTheme } from "./updateColorTheme";
+import { addNewHistoryItem } from "./HistoryPopup/historyService";
+import { renderHistory } from "./HistoryPopup/renderHistory";
 
 export async function renderWeatherData(
   locationName = null,
@@ -41,7 +43,7 @@ export async function renderWeatherData(
 
     if (lat == null && locationName != null) {
       data = await getWeatherByCityName(locationName);
-      console.log(data);
+      // console.log(data);
       timezone = data.city.timezone;
       lat = data.city.coord.lat;
       lon = data.city.coord.lon;
@@ -79,11 +81,11 @@ export async function renderWeatherData(
 
     //Тема
     await updateColorTheme(dataGeolocation);
+    // console.log("dataGeolocation", dataGeolocation);
 
-    console.log("dataGeolocation", dataGeolocation);
+    await addNewHistoryItem();
 
-
-
+    renderHistory();
   } catch (error) {
     console.error("Ошибка при отображении данных:", error.message);
   }

@@ -25,6 +25,11 @@
   &__city {
     font-size: clamp(28px, 4vh, 44px);
     margin-block: 15px;
+
+    @media (width <= 950px) {
+      font-size: clamp(28px, 2.88vh, 44px);
+    }
+
     @include mobile {
       font-size: clamp(28px, 8.7vw, 40px);
       margin-block: 0.3em;
@@ -42,6 +47,11 @@
   &__temperature {
     font-size: clamp(88px, 12.9vh, 140px);
     margin-block: 15px;
+
+    @media (width <= 950px) {
+      font-size: clamp(88px, 9.3vh, 140px);
+    }
+
     @include mobile {
       font-size: 104px;
       font-size: clamp(72px, 25vw, 114px);

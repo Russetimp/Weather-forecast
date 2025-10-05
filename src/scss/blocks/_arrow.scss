@@ -6,10 +6,8 @@
     scale: 2;
     transform-origin: center center;
     cursor: pointer; /* меняет курсор на руку */
-    transition: transform var(--transition-duration); /* плавный переход для трансформации */
-    &:hover {
-      scale: 2.2; /* плавное увеличение размера на 10% */
-    }
+    
+    @include hover-scale(1.1);
   }
 
   &-left {

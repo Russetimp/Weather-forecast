@@ -7,8 +7,8 @@
 }
 
 @mixin square($size) {
-    width: $size;
-    height: $size;
+  width: $size;
+  height: $size;
 }
 
 @mixin visually-hidden {
@@ -29,5 +29,19 @@
 @mixin weather-bg($start-color, $end-color) {
   background: linear-gradient(to bottom, $start-color, $end-color);
   transition: background-color var(--transition-duration) ease-in-out;
-    // transition: background-color var(--transition-duration) ease;
+  // transition: background-color var(--transition-duration) ease;
+}
+
+@mixin hover-scale($size) {
+  transition: transform var(--transition-duration);
+  &:hover {
+    transform: scale($size); // плавное увеличение размера на 10%
+  }
+}
+
+@mixin hover-bg-color {
+  transition: background-color var(--transition-duration);
+  &:hover {
+    background-color: var(--background-color);
+  }
 }

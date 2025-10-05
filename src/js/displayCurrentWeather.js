@@ -23,20 +23,20 @@ export async function displayCurrentWeather(api) {
     throw error; // или обработать, как нужно
 }*/
     const data = api;
-    console.log(data);
-    console.log(data.name);
-    console.log(data.weather[0].icon);
+    // console.log(data);
+    // console.log(data.name);
+    // console.log(data.weather[0].icon);
 
     // Получаем дату с учетом UTC
     let today = new Date((data.dt + data.timezone) * 1000);
-    console.log(today.toUTCString());
+    // console.log(today.toUTCString());
 
     // Получаем день недели на русском языке:
     let firstDayOfWeek = today.toLocaleDateString("ru-RU", {
       weekday: "long",
       timeZone: "UTC",
     });
-    console.log(firstDayOfWeek);
+    // console.log(firstDayOfWeek);
     //Создаем содержимое current__data
     let currentData =
       firstDayOfWeek +

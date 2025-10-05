@@ -1,5 +1,6 @@
-////Получение данных для записи в addToWeatherHistory
-export async function getWeatherDataForLocalHistory() {
+////Получение данных для записи в addNewHistoryItem
+
+export async function getDataForNewHistoryItem() {
   const cityName = document.querySelector(".current__city").textContent;
   const weatherIcon = document.querySelector(".current-perceived__icon").src;
   const weatherTemperature = document.querySelector(

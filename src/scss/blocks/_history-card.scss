@@ -1,0 +1,76 @@
+@use "../helpers" as *;
+
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  background: lightgray;
+  box-sizing: border-box;
+  border-radius: clamp(8px, 0.8vw, 11px);
+  border-radius: var(--border-radius-card);
+  flex: 1 1 calc(25% - 9px);
+  max-width: calc(25% - 9px);
+  aspect-ratio: 2 / 1;
+  padding: 10px 10px 1px;
+  font-size: calc(var(--font-size-base) * 1.1);
+  color: white;
+
+  @media (width <= 1400px) {
+    flex: 1 1 calc(33.3% - 9px);
+    max-width: calc(33.3% - 9px);
+    aspect-ratio: 2 / 1;
+  }
+
+  @media (width <= 1100px) {
+    flex: 1 1 calc(50% - 9px);
+    max-width: calc(50% - 9px);
+    aspect-ratio: 2 / 1;
+  }
+
+  @media (width <= 500px) {
+    flex: 1 1 100%;
+    max-width: 70%;
+    aspect-ratio: 2 / 1;
+    padding: 15px 20px 10px;
+  }
+  @media (width <= 350px) {
+    padding: 10px 10px 5px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__city {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding-left: 4px;
+  }
+
+  &__weather {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    height: calc(var(--font-size-base) * 2);
+    width: auto;
+  }
+
+  &__temperature {
+  }
+
+  &__delete-button {
+    color: currentColor;
+    display: block;
+    align-self: flex-start;
+    // padding-block: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    @include hover-bg-color;
+    margin-top: -5px;
+
+    @include square(1em);
+  }
+}
