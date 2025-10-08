@@ -4,7 +4,7 @@ import { renderWeatherData } from "../renderWeatherData";
 // Отрисовка карточек в контейнере .history-popup__content
 export async function renderHistory() {
   const container = document.querySelector(".history-popup__content");
-  container.innerHTML = ""; // Очистить контейнер
+  container.replaceChildren(); // Очистить контейнер
 
   const history = getHistory();
 

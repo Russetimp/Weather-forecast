@@ -33,6 +33,7 @@
       content: "";
       display: block;
       position: absolute;
+      pointer-events: none;
       top: 50%;
       transform: translateY(-50%);
       right: 10px;
@@ -64,8 +65,9 @@
     outline: none;
     caret-color: var(--font-color);
     color: var(--font-color);
+    caret-color: var(--font-color);
 
-     @media (width <= 950px) {
+    @media (width <= 950px) {
       width: clamp(300px, 26.6vh, 400px);
     }
 

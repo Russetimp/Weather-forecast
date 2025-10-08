@@ -46,7 +46,7 @@ export async function addSlider(api, timezone, today) {
 
       // Очищаем контейнер
       const swiperWrapper = document.querySelector(".swiper-wrapper");
-      swiperWrapper.innerHTML = "";
+      swiperWrapper.replaceChildren();
 
       // Добавляем слайды в слайдер
       filteredList.forEach((item) => {

@@ -1,6 +1,6 @@
 @use "../helpers" as *;
 
-footer {
+.footer {
   text-align: center;
   min-height: 25px;
   width: 100%;
@@ -10,5 +10,9 @@ footer {
   @include mobile {
     margin-top: 20px;
     font-size: clamp(14px, 3.4vw, 16px);
+  }
+
+  &__author-link {
+    color: var(--font-color);
   }
 }

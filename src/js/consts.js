@@ -9,4 +9,7 @@
 const form = document.querySelector(".header__form");
 const input = document.querySelector(".header__input");
 
+const main = document.querySelector(".main");
+const current = document.querySelector(".current");
+
 export { form, input };

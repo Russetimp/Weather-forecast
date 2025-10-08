@@ -48,12 +48,9 @@ export async function addNewHistoryItem() {
   setHistory(history);
 }
 
-export async function clearHistory() {
-  if (confirm("Вы уверены, что хотите очистить историю?")) {
-    const container = document.querySelector(".history-popup__content");
-    container.innerHTML = ""; // Очистить контейнер
-    const history = [];
-    // console.log("clearHistory");
-    setHistory(history);
-  }
+  const container = document.querySelector(".history-popup__content");
+  export async function clearHistory() {
+    container.replaceChildren(); // Очистить контейнер
+    await new Promise(resolve => setTimeout(resolve, 0));
+    setHistory([]);
 }

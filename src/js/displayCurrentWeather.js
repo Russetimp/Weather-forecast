@@ -8,7 +8,7 @@
  * @throws {Error} При ошибках сети или некорректном ответе API
  */
 
-const main = document.querySelector(".main");
+// const main = document.querySelector(".main");
 const current = document.querySelector(".current");
 
 export async function displayCurrentWeather(api) {
@@ -52,7 +52,7 @@ export async function displayCurrentWeather(api) {
     currentData = currentData.replace(/\sг\./, "г");
 
     //Очищаем перед заполнением current
-    current.innerHTML = "";
+    current.replaceChildren();
     //Разметка current__city-data
     const currentContent = `
                             <div class="current__city-data">
