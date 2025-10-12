@@ -8,18 +8,17 @@
  * @param {function} renderWeatherData - Функция Отображения данных погоды на страницы.
  */
 
-import { renderWeatherData } from "./renderWeatherData";
+import { validateCityName } from "./validateCityName";
+import { renderWeatherData } from "../renderWeatherData";
 
 export function handleFormSubmit(form, input) {
   form.addEventListener("submit", function (e) {
-    // отменяем перезагрузку страницы при помощи Event.preventDefault()
     e.preventDefault();
-    // trim() удаляет пробельные символы с начала и конца строки(пробел, табуляция,
-    // неразрывный пробел и прочие) и все символы конца строки
+
     const city = input.value.trim();
 
-    if (!city) {
-      alert("Пожалуйста, введите название города");
+    if (!validateCityName(city)) {
+      input.focus();
       return;
     }
 

@@ -5,19 +5,5 @@
 @use "helpers" as *;
 @use "globals";
 
-@use "blocks/header";
-@use "blocks/current";
-@use "blocks/weather-conditions";
-@use "blocks/weather-condition";
-@use "blocks/detailed";
-@use "blocks/one-day";
-@use "blocks/swiper";
-@use "blocks/arrow";
-@use "blocks/weather-grid";
-@use "blocks/footer";
-
-@use "weather/rain";
-@use "weather/weatherColors";
-
-@use "blocks/history-popup";
-@use "blocks/history-card";
+@use "blocks" as *;
+@use "weather" as *;

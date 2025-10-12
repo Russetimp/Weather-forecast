@@ -1,21 +1,26 @@
+/**
+ * Отрисовывает историю запросов погоды в контейнере .history-popup__content.
+ * Для каждой записи создается карточка с информацией о городе, погоде и кнопкой удаления.
+ * При клике на кнопку удаления удаляет запись из истории и обновляет отображение.
+ * При клике по самой карточке (кроме кнопки удаления) отображает погоду по названию города и закрывает окно истории.
+ */
+
 import { getHistory, removeHistoryItem } from "./historyService";
 import { renderWeatherData } from "../renderWeatherData";
 
 // Отрисовка карточек в контейнере .history-popup__content
-export async function renderHistory() {
+export function renderHistory() {
   const container = document.querySelector(".history-popup__content");
-  container.replaceChildren(); // Очистить контейнер
+  container.replaceChildren();
 
   const history = getHistory();
 
   history.forEach((item, index) => {
     const card = document.createElement("div");
     card.className = "history-card";
+
     // Если у item нет id, создаём уникальный идентификатор на основе индекса
     card.dataset.id = item.id !== undefined ? item.id : `${index}`;
-
-    // console.log("item", item, "index", index, "id", card.dataset.id)
-
     card.innerHTML = `
           <div class="history-card__info">
             <span class="history-card__city">${item.cityName}</span>
@@ -33,14 +38,16 @@ export async function renderHistory() {
 
           <button
             class="history-card__delete-button"
-            aria-label="Close history popup"
+            aria-label="Удалить запрос из истории"
           >
             <svg
+
               width="100%"
               height="100%"
               viewBox="0 0 16 16"
               aria-hidden="true"
               focusable="false"
+              aria-hidden="true"
             >
               <line
                 x1="1"
@@ -63,19 +70,17 @@ export async function renderHistory() {
             </svg>
           </button>`;
 
-    // Background на всю карточку
-      card.style.background = `${item.linearGradientBody}`;
+    // Фон с градиентом карточки
+    card.style.background = `${item.linearGradientBody}`;
 
-    // Обработчик клика на всю карточку
+    // Обработчик клика на карточку
     card.addEventListener("click", (event) => {
       // Проверка: если клик был по кнопке удаления — удалить карточку и обновить LocalStorage
       if (event.target.closest(".history-card__delete-button")) {
-        
         const id = card.dataset.id;
         removeHistoryItem(id);
-        console.log("history-card__delete-button", id);
-        renderHistory(); // обновить список после удаления
-        return; // прервать дальнейшее выполнение
+        renderHistory();
+        return;
       }
 
       // Если клик не по кнопке — вызвать функцию renderWeatherData с названием города
@@ -88,5 +93,3 @@ export async function renderHistory() {
     container.appendChild(card);
   });
 }
-
-

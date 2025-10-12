@@ -6,7 +6,8 @@
  * - getHistory()       — получить массив записей истории,
  * - setHistory(history) — сохранить массив истории,
  * - removeHistoryItem(id) — удалить конкретную запись по уникальному id,
- * - addNewHistoryItem() — добавить новую запись в историю.
+ * - addNewHistoryItem() — добавить новую запись в историю с проверкой повторных запросов
+ * - clearHistory() — очищает историю и DOM-контейнер для отображения истории.
  */
 
 import { getDataForNewHistoryItem } from "./getDataForNewHistoryItem";
@@ -22,35 +23,35 @@ export function setHistory(history) {
   localStorage.setItem("weatherHistory", JSON.stringify(history));
 }
 
-// Удалить запись из истории по id (уникальный ключ)
+// Удалить запись из истории
 export function removeHistoryItem(id) {
   const history = getHistory();
-  //  console.log("id", id);
-  // console.log("history", history);
-  // const newHistory = history.filter((item) => item.id !== id);
-  const newHistory = history.splice(id, 1);
-  setHistory(history);
-  // console.log("newHistory", history);
+  if (id >= 0 && id < history.length) {
+    history.splice(id, 1);
+    setHistory(history);
+  }
 }
 
-export async function addNewHistoryItem() {
+//Добавить новую запись в историю.
+export function addNewHistoryItem() {
   const history = getHistory();
-
-  // Добавление новой записи в начало массива
-  history.unshift(await getDataForNewHistoryItem());
-
-  // Ограничение количества записей в истории
-  if (history.length > 16) {
-    history.pop(); // Удаление последнего элемента, чтобы остаться в лимите
+  const cityNow = document.querySelector(".current__city").textContent;
+  if (history[0] && history[0].cityName == cityNow) {
+    history[0] = getDataForNewHistoryItem();
+  } else {
+    history.unshift(getDataForNewHistoryItem());
   }
 
-  // Сохранение обновленного массива в localStorage
+  if (history.length > 16) {
+    history.pop();
+  }
+
   setHistory(history);
 }
 
-  const container = document.querySelector(".history-popup__content");
-  export async function clearHistory() {
-    container.replaceChildren(); // Очистить контейнер
-    await new Promise(resolve => setTimeout(resolve, 0));
-    setHistory([]);
+//Очистить историю
+const container = document.querySelector(".history-popup__content");
+export function clearHistory() {
+  container.replaceChildren();
+  setHistory([]);
 }

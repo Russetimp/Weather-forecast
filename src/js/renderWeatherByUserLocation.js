@@ -10,20 +10,21 @@
 
 import { renderWeatherData } from "./renderWeatherData";
 
-export function displayWeatherByUserLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      async function (position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        renderWeatherData(null, lat, lon);
-      },
-
-      function (error) {
-        console.log("Ошибка определения геолокации: " + error.message);
-      }
-    );
-  } else {
+export function renderWeatherByUserLocation() {
+  if (!navigator.geolocation) {
     console.log("Геолокация не поддерживается вашим браузером");
+    return;
   }
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      renderWeatherData(null, lat, lon);
+    },
+
+    function (error) {
+      console.log("Ошибка определения геолокации: " + error.message);
+    }
+  );
 }

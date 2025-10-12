@@ -1,13 +1,12 @@
 import "swiper/css/bundle";
 import "../scss/main.scss";
-import { displayWeatherByUserLocation } from "./displayWeatherByUserLocation.js";
-import { handleFormSubmit } from "./handleFormSubmit.js";
+import { renderWeatherByUserLocation } from "./renderWeatherByUserLocation.js";
+import { handleFormSubmit } from "./FormSubmit/handleFormSubmit.js";
 import { form, input } from "./consts.js";
 import { setupAllListeners } from "./Listeners/setupAllListeners.js";
 
-
 //Запрос у пользователя геолокации
-displayWeatherByUserLocation();
+renderWeatherByUserLocation();
 
 //Добавляет слушатели событий
 setupAllListeners();

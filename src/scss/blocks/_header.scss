@@ -29,25 +29,6 @@
       font-size: clamp(14px, 4.37vw, 20px);
     }
 
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      pointer-events: none;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 10px;
-      background: url(/public/images/magnifier.svg);
-
-      @include square(1.4em);
-      background-repeat: no-repeat;
-      background-size: contain;
-
-      @include mobile {
-        @include square(1.4em);
-      }
-    }
-
     &.hide-after::after {
       opacity: 0;
       transition: opacity var(--transition-duration);
@@ -92,6 +73,23 @@
     }
   }
 
+  &__search-button {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    border: none;
+    background: url(/public/images/magnifier.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include square(1.4em);
+
+    @include mobile {
+      @include square(1.4em);
+    }
+  }
+
   &__burger-button {
     background: transparent;
     border: none;
@@ -121,7 +119,7 @@
   }
 }
 
-body.light-theme .header__form::after {
+body.light-theme .header__search-button {
   background: url(/public/images/magnifier_black.svg);
   background-size: contain;
 }

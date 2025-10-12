@@ -7,12 +7,11 @@
   background-color: var(--background-color);
   border-radius: var(--border-radius);
   overflow: auto;
-   @include mobile {
-      padding-inline: clamp(10px, 4.8vw, 20px);
-    }
+  @include mobile {
+    padding-inline: clamp(10px, 4.8vw, 20px);
+  }
 
   &__wrapper {
-    
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
     grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
@@ -57,5 +56,8 @@
 
   &__description {
     padding-left: 10px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 }

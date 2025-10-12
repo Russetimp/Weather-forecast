@@ -1,10 +1,20 @@
-export async function updateWeatherBackground(dataGeolocation) {
-// Получаем иконку погоды
-const weatherIcon = dataGeolocation.weather[0].icon;
+/**
+ * Обновляет фон страницы в зависимости от иконки погоды, меняя класс у body.
+ * Если иконка погоды отсутствует, выводит предупреждение и завершает выполнение.
 
-// Удаляем предыдущий класс погоды
-document.body.className = document.body.className.replace(/\bweather-\w+/g, '');
+ * @param {Object} dataGeolocation - Объект с данными о погоде.
+ */
 
-// Добавляем новый класс
-document.body.classList.add(`weather-${weatherIcon}`);
+export function updateWeatherBackground(dataGeolocation) {
+  if (!dataGeolocation?.weather?.[0]?.icon) {
+    console.error("Иконка погоды не найдена");
+    return;
+  }
+
+  const weatherIcon = dataGeolocation.weather[0].icon;
+  document.body.className = document.body.className.replace(
+    /\bweather-\w+/g,
+    ""
+  );
+  document.body.classList.add(`weather-${weatherIcon}`);
 }

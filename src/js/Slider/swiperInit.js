@@ -14,7 +14,6 @@ export function initSwiper() {
     slidesPerView: 5, // Количество видимых слайдов
     slidesPerGroup: 1,
     spaceBetween: 10, // Расстояние между слайдами
-    //  loop: false,
     navigation: {
       prevEl: ".custom-prev",
       nextEl: ".custom-next",
