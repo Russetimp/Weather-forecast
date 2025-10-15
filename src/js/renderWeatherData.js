@@ -20,6 +20,7 @@
 @see {@link module:updateColorTheme} Функция обновления цветовой темы.
 @see {@link module:addNewHistoryItem} Функция добавления элемента истории поиска.
 @see {@link module:renderHistory} Функция отрисовки истории поиска.
+@see {@link module:closePreloader} Функция скрытия истории заставки.
 */
 
 import { getWeatherByCityName } from "./Api/getWeatherByCityName";
@@ -32,6 +33,7 @@ import { updateWeatherBackground } from "./updateWeatherBackground";
 import { updateColorTheme } from "./updateColorTheme";
 import { addNewHistoryItem } from "./HistoryPopup/historyService";
 import { renderHistory } from "./HistoryPopup/renderHistory";
+import { closePreloader } from "./Preloader/closePreloader";
 
 export async function renderWeatherData(
   locationName = null,
@@ -72,6 +74,9 @@ export async function renderWeatherData(
 
     //Получение первого дня
     const today = new Date((data.list[0].dt + timezone) * 1000);
+    
+    // Скрытие Preloader
+    closePreloader();
 
     // Отображаем разные части интерфейса
     renderCurrentWeather(dataGeolocation);

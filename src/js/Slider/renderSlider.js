@@ -11,6 +11,7 @@
 
 import { initSwiper } from "./swiperInit.js";
 import { createSlide } from "./createSlide.js";
+import { createArrows } from "./createArrows.js";
 
 let swiper = null;
 
@@ -49,8 +50,22 @@ export async function renderSlider(api, timezone, today) {
       swiper = null;
     }
 
+    // Добавление стрелок пагинации
+    const arrows = createArrows()
+    const oneDay = document.querySelector(".one-day")
+    oneDay.insertAdjacentHTML("beforeend", arrows)
+
     // Инициализируем слайдер заново
     swiper = initSwiper();
+
+    setTimeout(() => {
+    const customPrev = document.querySelector(".custom-prev");
+    customPrev.classList.remove("visually-hidden");
+
+    const customNext = document.querySelector(".custom-next");
+    customNext.classList.remove("visually-hidden");
+    }, 500);
+
   } catch (error) {
     console.error("Ошибка запроса погоды на 5 дней", error.message);
   }

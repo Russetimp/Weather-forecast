@@ -1,4 +1,3 @@
-// центрирование через абсолютное позиционирование
 @mixin abs-center {
   position: absolute;
   top: 50%;
@@ -29,7 +28,6 @@
 @mixin weather-bg($start-color, $end-color) {
   background: linear-gradient(to bottom, $start-color, $end-color);
   transition: background-color var(--transition-duration) ease-in-out;
-  // transition: background-color var(--transition-duration) ease;
 }
 
 @mixin hover-scale($size) {

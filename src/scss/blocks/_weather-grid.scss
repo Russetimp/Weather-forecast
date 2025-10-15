@@ -13,8 +13,8 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 12fr; /* 4 колонки */
-    grid-template-rows: auto repeat(5, 1fr); /* Заголовок + 5 строк */
+    grid-template-columns: 1fr 1.5fr 1.5fr 12fr; 
+    grid-template-rows: auto repeat(5, 1fr); 
     padding-top: clamp(15px, 2.7vh, 30px);
     padding-bottom: clamp(5px, 1.8vh, 20px);
     font-size: var(--font-size-base);
@@ -27,7 +27,7 @@
   }
 
   &__header {
-    grid-column: 1 / -1; /* Заголовок на всю строку */
+    grid-column: 1 / -1; 
     width: 100%;
     text-align: start;
     padding-bottom: 0.5em;

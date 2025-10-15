@@ -6,9 +6,10 @@
   width: 100%;
   margin-top: auto;
   font-size: clamp(16px, 2vh, 22px);
+  z-index: 2;
+  color: var(--font-color);
 
   @include mobile {
-    margin-top: 20px;
     font-size: clamp(14px, 3.4vw, 16px);
   }
 

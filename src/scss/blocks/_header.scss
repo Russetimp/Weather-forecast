@@ -8,6 +8,7 @@
   width: 100%;
   padding-block: 10px;
   height: 100px;
+  z-index: 2;
 
   max-width: calc(
     var(--container-width) + var(--container-padding-x) * 2 + 100px
@@ -62,13 +63,12 @@
 
     &:focus {
       &::placeholder {
-        opacity: 0; /* или color: transparent; */
+        opacity: 0; 
         transition: opacity var(--transition-duration);
       }
 
       &::after {
-        content: none; /* полностью скрыть */
-        /* либо opacity: 0; или display: none; по ситуации */
+        content: none; 
       }
     }
   }
@@ -95,7 +95,6 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    @include hover-bg-color;
 
     &-wrapper {
       display: flex;

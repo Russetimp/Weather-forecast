@@ -5,7 +5,7 @@
   &-right {
     scale: 2;
     transform-origin: center center;
-    cursor: pointer; /* меняет курсор на руку */
+    cursor: pointer;
 
     @include hover-scale(1.1);
   }
@@ -18,7 +18,7 @@
 .custom-prev,
 .custom-next {
   position: absolute;
-  z-index: 10; /* Поверх слайдера */
+  z-index: 10; 
   transition: opacity var(--transition-duration);
   &.swiper-button-disabled {
     opacity: 0;

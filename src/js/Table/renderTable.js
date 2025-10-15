@@ -34,14 +34,15 @@ export function renderTable(data, today) {
           }@2x.png" alt="" width="75" height="75" class="weather-grid__icon" />
         </div>
         <div class="weather-grid__temp">${
-          (Math.round(item.main.feels_like) > 0 ? "+" : "") + Math.round(item.main.feels_like) + "&deg"
+          (Math.round(item.main.feels_like) > 0 ? "+" : "") +
+          Math.round(item.main.feels_like) +
+          "&deg"
         }</div>
         <div class="weather-grid__description">${
           item.weather[0].description
         }</div>`;
     }
     container.innerHTML = html;
-
   } catch (error) {
     console.error("Ошибка при добавлении таблицы", error.message);
   }

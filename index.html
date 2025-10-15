@@ -9,10 +9,24 @@
       type="image/x-icon"
     />
     <title>Weather forecast</title>
+    <style>
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      border: 0 !important;
+      padding: 0 !important;
+      white-space: nowrap !important;
+      clip-path: inset(100%) !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+    }
+    </style>
   </head>
 
   <body>
-    <header class="header container">
+    <header class="header container" style="visibility:hidden">
       <button
         class="header__burger-button"
         aria-label="Открыть историю запросов"
@@ -25,9 +39,9 @@
       </button>
 
       <form class="header__form" autocomplete="off">
-        <label for="city-input" class="visually-hidden"
+        <!-- <label for="city-input" class="visually-hidden"
           >Введите название города</label
-        >
+        > -->
         <input
           id="city-input"
           class="header__input"
@@ -46,15 +60,17 @@
       <section class="current">
         <h2 class="visually-hidden">Текущая погода</h2>
       </section>
+
       <section class="detailed">
         <h2 class="visually-hidden">Подробный прогноз</h2>
+        
         <div class="one-day">
           <h3 class="visually-hidden">Прогноз каждые 3 часа</h3>
           <div class="swiper-container">
             <div class="swiper-wrapper"></div>
           </div>
-          <div
-            class="swiper-button-prev custom-prev"
+          <!-- <div
+            class="swiper-button-prev custom-prev visually-hidden"
             aria-label="Предыдущее время погоды"
           >
             <svg
@@ -83,8 +99,9 @@
               </g>
             </svg>
           </div>
+
           <div
-            class="swiper-button-next custom-next"
+            class="swiper-button-next custom-next visually-hidden"
             aria-label="Следующее время погоды"
           >
             <svg
@@ -112,7 +129,7 @@
                 />
               </g>
             </svg>
-          </div>
+          </div> -->
         </div>
 
         <div class="fiveday">
@@ -123,8 +140,8 @@
         </div>
       </section>
     </main>
-
-    <footer class="footer container">
+.
+    <footer class="footer container" style="visibility:hidden">
       <div class="footer__author">
         Разработал:
         <a
@@ -138,7 +155,7 @@
     </footer>
 
     <!-- История -->
-    <div class="history-popup">
+    <div class="history-popup" style="visibility:hidden">
       <h2 class="visually-hidden">История запросов</h2>
       <div class="history-popup__header">
         <button
@@ -177,6 +194,12 @@
       <div class="history-popup__content container"></div>
     </div>
 
+    <!-- Анимационный слой -->
+    <div class="preloader" >
+        <div class="preloader__sun"></div>
+        <div class="preloader__moon"></div>
+      </div>
+    </div>
     <script src="/src/js/main.js" type="module"></script>
   </body>
 </html>

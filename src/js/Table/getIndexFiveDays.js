@@ -6,7 +6,7 @@
  * @returns {number[]} Массив из 5 индексов.
  *
  * @example
- * getIndexFiveDays(new Date('2025-10-08')); // [0, 8, 16, 24, 32]
+ * getIndexFiveDays(new Date("2025-10-08")); // [0, 8, 16, 24, 32]
  */
 
 export function getIndexFiveDays(today) {
