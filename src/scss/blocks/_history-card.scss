@@ -66,6 +66,7 @@
     border: none;
     @include hover-bg-color;
     margin-top: -5px;
+    cursor: pointer;
 
     @include square(1em);
   }

@@ -63,12 +63,12 @@
 
     &:focus {
       &::placeholder {
-        opacity: 0; 
+        opacity: 0;
         transition: opacity var(--transition-duration);
       }
 
       &::after {
-        content: none; 
+        content: none;
       }
     }
   }
@@ -80,7 +80,7 @@
     transform: translateY(-50%);
     right: 10px;
     border: none;
-    background: url(/public/images/magnifier.svg);
+    background: url("/images/magnifier.svg");
     background-repeat: no-repeat;
     background-size: contain;
     @include square(1.4em);
@@ -119,6 +119,6 @@
 }
 
 body.light-theme .header__search-button {
-  background: url(/public/images/magnifier_black.svg);
+  background: url("/images/magnifier_black.svg");
   background-size: contain;
 }
